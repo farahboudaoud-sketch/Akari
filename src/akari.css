@@ -1,0 +1,13 @@
+.ak-lit{fill:var(--ink);opacity:.09}
+.ak-wall rect{fill:var(--ink)}
+.ak-wall text{fill:var(--navy2);font-family:'Chiffres',sans-serif;font-size:28px;font-weight:700;text-anchor:middle}
+.ak-wall.ok text{opacity:.45}
+.ak-wall.over rect{fill:var(--red)}
+.ak-wall.over text{fill:var(--paper)}
+.ak-lamp circle{fill:var(--red);stroke:var(--ink);stroke-width:2}
+.ak-lamp path{stroke:var(--ink);stroke-width:3;stroke-linecap:round}
+.ak-lamp.clash circle{fill:var(--overfill);stroke:var(--red2);stroke-width:3.5}
+.ak-lamp.bad circle{stroke:var(--red2);stroke-width:4}
+.ak-mark{fill:var(--ink2)}
+.ak-bad{fill:none;stroke:var(--red2);stroke-width:3.5}
+.ak-ghost{fill:none;stroke:var(--red2);stroke-width:3;stroke-dasharray:5 5;animation:breathe 1.3s ease-in-out infinite}

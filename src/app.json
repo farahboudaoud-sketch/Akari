@@ -1,0 +1,13 @@
+{
+  "id": "akari",
+  "name": "Akari",
+  "kanji": "灯",
+  "tagline": "Éclairer toute la grille, lanterne après lanterne",
+  "introArt": "<rect class=\"ic\" x=\"60\" y=\"50\" width=\"45\" height=\"45\" pathLength=\"1\" style=\"animation-delay:0.00s\"/><rect class=\"ic\" x=\"105\" y=\"50\" width=\"45\" height=\"45\" pathLength=\"1\" style=\"animation-delay:0.05s\"/><rect class=\"ic\" x=\"150\" y=\"50\" width=\"45\" height=\"45\" pathLength=\"1\" style=\"animation-delay:0.10s\"/><rect class=\"ic\" x=\"195\" y=\"50\" width=\"45\" height=\"45\" pathLength=\"1\" style=\"animation-delay:0.15s\"/><rect class=\"ic\" x=\"60\" y=\"95\" width=\"45\" height=\"45\" pathLength=\"1\" style=\"animation-delay:0.20s\"/><rect class=\"ic\" x=\"105\" y=\"95\" width=\"45\" height=\"45\" pathLength=\"1\" style=\"animation-delay:0.25s\"/><rect class=\"ic\" x=\"150\" y=\"95\" width=\"45\" height=\"45\" pathLength=\"1\" style=\"animation-delay:0.30s\"/><rect class=\"ic\" x=\"195\" y=\"95\" width=\"45\" height=\"45\" pathLength=\"1\" style=\"animation-delay:0.35s\"/><rect class=\"ic\" x=\"60\" y=\"140\" width=\"45\" height=\"45\" pathLength=\"1\" style=\"animation-delay:0.40s\"/><rect class=\"ic\" x=\"105\" y=\"140\" width=\"45\" height=\"45\" pathLength=\"1\" style=\"animation-delay:0.45s\"/><rect class=\"ic\" x=\"150\" y=\"140\" width=\"45\" height=\"45\" pathLength=\"1\" style=\"animation-delay:0.50s\"/><rect class=\"ic\" x=\"195\" y=\"140\" width=\"45\" height=\"45\" pathLength=\"1\" style=\"animation-delay:0.55s\"/><rect class=\"icf\" x=\"195\" y=\"50\" width=\"45\" height=\"45\" style=\"animation-delay:.7s\"/><rect class=\"icf\" x=\"60\" y=\"95\" width=\"180\" height=\"45\" style=\"opacity:0;animation:fade .4s ease-out 1s forwards;fill:var(--ink);fill-opacity:.12\"/><rect class=\"icf\" x=\"105\" y=\"50\" width=\"45\" height=\"135\" style=\"opacity:0;animation:fade .4s ease-out 1s forwards;fill:var(--ink);fill-opacity:.12\"/><circle cx=\"127.5\" cy=\"117.5\" r=\"12\" style=\"fill:var(--red);opacity:0;animation:fade .3s ease-out .85s forwards\"/>",
+  "scripts": [
+    "akari.js"
+  ],
+  "css": [
+    "akari.css"
+  ]
+}

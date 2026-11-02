@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Akari</string>
+    <string name="title_activity_main">Akari</string>
+    <string name="package_name">fr.akari.jeu</string>
+    <string name="custom_url_scheme">fr.akari.jeu</string>
+</resources>
