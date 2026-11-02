@@ -309,6 +309,25 @@ if (typeof module !== 'undefined') module.exports = AkariEngine;
   }
   const ri = i => ({ r: (i / B.W) | 0, c: i % B.W });
 
+  const FIGS = (() => {
+    const s = 18;
+    const board = (walls, lamps, lit, bad) => {
+      let o = '';
+      lit.forEach(([r, c]) => o += `<rect class="fh" x="${c * s}" y="${r * s}" width="${s}" height="${s}"/>`);
+      o += figGrid(5, 5, s);
+      walls.forEach(([r, c, n]) => { o += `<rect class="fi" x="${c * s + 1}" y="${r * s + 1}" width="${s - 2}" height="${s - 2}" rx="2"/>`; if (n !== undefined) o += figNum(c * s + s / 2, r * s + s / 2, n, 'n', 12); });
+      lamps.forEach(([r, c]) => o += `<circle cx="${c * s + s / 2}" cy="${r * s + s / 2}" r="6" style="fill:var(--red);stroke:${bad ? 'var(--red2)' : 'var(--ink)'};stroke-width:${bad ? 2.5 : 1.5}"/>`);
+      return o;
+    };
+    const lit1 = [[2, 0], [2, 1], [2, 2], [2, 3], [0, 2], [1, 2], [3, 2]];
+    const f1 = board([[2, 4], [4, 2]], [[2, 2]], lit1);
+    const f2 = board([[0, 2]], [[2, 0], [2, 4]], [[2, 0], [2, 1], [2, 2], [2, 3], [2, 4]], true) + `<line class="frs" x1="${s * .5 + 6}" y1="${s * 2.5}" x2="${s * 4.5 - 6}" y2="${s * 2.5}" style="stroke-dasharray:3 3"/>`;
+    const f3 = board([[2, 2, 2]], [[1, 2], [2, 3]], [[1, 0], [1, 1], [1, 2], [1, 3], [1, 4], [0, 2], [2, 3], [2, 4], [3, 3], [4, 3], [0, 3]]);
+    return figFigs(
+      ruleFig(f1, 5 * s, 5 * s, 'Une lanterne éclaire sa ligne et sa colonne, jusqu\'au premier mur.'),
+      ruleFig(f2, 5 * s, 5 * s, 'Deux lanternes qui se voient, sans mur entre elles.', 'no'),
+      ruleFig(f3, 5 * s, 5 * s, 'Le mur 2 touche exactement 2 lanternes.', 'ok'));
+  })();
   registerGame({
     id: 'akari', name: 'Akari', kanji: '灯', winText: 'Tout est éclairé',
     levels: LV, customLevel, customDefault: { W: 10, H: 10, hard: false }, customRange: { W: [5, 20], H: [5, 25] },
@@ -317,7 +336,7 @@ if (typeof module !== 'undefined') module.exports = AkariEngine;
       <li>Place des <b>lanternes</b> dans les cases blanches. Une lanterne éclaire sa ligne et sa colonne, jusqu'au premier mur.</li>
       <li>Toutes les cases blanches doivent être <b>éclairées</b>.</li>
       <li>Deux lanternes ne doivent <b>jamais se voir</b>.</li>
-      <li>Un <b>mur chiffré</b> indique le nombre exact de lanternes qui le touchent (haut, bas, gauche, droite).</li></ul>
+      <li>Un <b>mur chiffré</b> indique le nombre exact de lanternes qui le touchent (haut, bas, gauche, droite).</li></ul>${FIGS}
       <h3>Commandes</h3><ul>
       <li>Touche une case : <b>lanterne</b>, puis <b>marque</b> (· = pas de lanterne), puis vide.</li>
       <li>Glisse le doigt pour marquer ou effacer plusieurs cases d'un coup.</li></ul>`,
